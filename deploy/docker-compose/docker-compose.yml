@@ -173,3 +173,22 @@ services:
     read_only: true
     hostname: user-simulator
     command: "-d 60 -r 200 -c 2 -h edge-router"
+  integration-test:
+    build: ../../integration-test/
+    network_mode: "host"
+    depends_on:
+      - front-end
+      - edge-router
+      - catalogue
+      - catalogue-db
+      - carts
+      - carts-db
+      - orders
+      - orders-db
+      - shipping
+      - queue-master
+      - rabbitmq
+      - payment
+      - user
+      - user-db
+      - user-sim
