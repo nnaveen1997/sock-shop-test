@@ -10,7 +10,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 #Copy source code
-COPY test.py .
+COPY integration_test.py .
 
 #Run the code
-CMD [ "python", "test.py" ]
+CMD [ "python", "integration_test.py" ]
